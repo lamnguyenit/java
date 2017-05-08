@@ -10,6 +10,7 @@
  */
 import java.awt.*;
 import java.awt.event.*;
+import java.time.Clock;
 public class tinhtong extends Frame implements ActionListener, WindowListener{
     Label lblA=new Label("A=");
     Label lblB=new Label("b=");
@@ -18,6 +19,7 @@ public class tinhtong extends Frame implements ActionListener, WindowListener{
     TextField txtB=new TextField(10);
     TextField txtKQ=new TextField(20);
     Button btnTong=new Button("Tong");
+    Button btnThoat=new Button("Thoat");
    
     public tinhtong()
     {
@@ -27,6 +29,8 @@ public class tinhtong extends Frame implements ActionListener, WindowListener{
         this.add(txtB);
         this.add(btnTong);
         btnTong.addActionListener(this);
+        this.add(btnThoat);
+        btnThoat.addActionListener(this);
        
         this.add(lblKQ);
         this.add(txtKQ);
@@ -34,7 +38,7 @@ public class tinhtong extends Frame implements ActionListener, WindowListener{
         addWindowListener(this);
         
         
-        this.setLayout(new FlowLayout());
+        this.setLayout(new GridLayout(4,3,5,5));
         this.setBackground(Color.cyan);
         
     }
@@ -46,7 +50,9 @@ public class tinhtong extends Frame implements ActionListener, WindowListener{
             long b=Integer.parseInt(txtB.getText());
             long c=a+b;
             txtKQ.setText(c + ""); 
-        }
+        }else
+            System.exit(0);
+    ,
         
     }
     public static void main(String[] args) {
