@@ -21,6 +21,7 @@ public class tonghieutichthuong extends Frame implements ActionListener, WindowL
     Button btnHieu=new Button("Hieu");
     Button btnTich=new Button("Tich");
     Button btnThuong=new Button("Thuong");
+    Button btnThoat=new Button("Thoat");
     public tonghieutichthuong()
     {
         this.add(lblA);
@@ -37,11 +38,13 @@ public class tonghieutichthuong extends Frame implements ActionListener, WindowL
         btnThuong.addActionListener(this);
         this.add(lblKQ);
         this.add(txtKQ);
+        this.add(btnThoat);
+        btnThoat.addActionListener(this);
         txtKQ.setEditable(false);
         addWindowListener(this);
         
         
-        this.setLayout(new GridLayout(5,2,0,10));
+        this.setLayout(new GridLayout(6,2,0,10));
         this.setBackground(Color.cyan);
         
     }
@@ -81,11 +84,17 @@ public class tonghieutichthuong extends Frame implements ActionListener, WindowL
             
 
         }
+           if(e.getSource()==btnThoat)
+        {
+            System.exit(0);
+            
+
+        }
     }
     public static void main(String[] args) {
         tonghieutichthuong thtt=new tonghieutichthuong();
         thtt.setTitle("tonghieutichthuong");
-        thtt.setSize(300,200);
+        thtt.setSize(400,250);
         
         thtt.setVisible(true);
     }
