@@ -86,7 +86,7 @@ public class ttussntpt extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(phantich);
-        phantich.setText("Phân tích(<14 thì run oke >14 sai updating)");
+        phantich.setText("Phân tích");
         phantich.setName("phantich"); // NOI18N
         phantich.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +148,7 @@ public class ttussntpt extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,24 +253,23 @@ public class ttussntpt extends javax.swing.JFrame {
         }
          if(phantich.isSelected())
         {
-            String i = "",j="";
+            String s="";
             int n=Integer.parseInt(txtN.getText());
-            txtKQ.setText(n+"=1");
-            int a=2;
-            while(true){
-                if(n%a==0)
+            int i=2;
+            while (n != 1)
+            {
+                if ((n%i) == 0)
                 {
-                    i=i+"*"+a;
-                    n=n/a;
+                    s=s+"*"+i;
+                    n /= i;
                 }
-                if(n/a==1)
-                {
-                    j=j+"*"+n;
-                    break;
-                }
-                a++;
+
+                else
+                    i++;
             }
-            txtKQ.setText(n+"=1"+i+j);
+            txtKQ.setText(txtN.getText()+"=1"+s);
+            
+          
         }
         
     }//GEN-LAST:event_thuchienActionPerformed
